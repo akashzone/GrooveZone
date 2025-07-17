@@ -1,9 +1,23 @@
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   color: #fff;
+  /* Removed global overflow: hidden; to allow local overflow settings */
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-area {
+  flex: 1;
+  display: flex;
+  min-height: 0;
 }
 
 .header-section {
@@ -113,24 +127,111 @@
   opacity: 1;
 }
 
+/* Side Bar */
 
 .side-bar{
-    height: 100vh;
-    width: 25vw;
-    background-color: #1d1d1d;
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  background-color: #1d1d1d;
+  height: 100%;
+}
+.library{
+  height: 17%;
+  background-color: #1d1d1d;
+  padding: 1rem; 
+  box-shadow: 2px 10px 5px rgba(0, 0, 0, 0.3);
+}
+.head{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.side-bar .side-bar-header {
+  font-size: 1rem;
 }
 
+.side-bar .head button{
+  margin-left: 5rem;
+}
+
+.side-bar .library button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: none;
+  border-radius: 1.5rem;
+  background-color: #494747;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.side-bar .library button:hover {
+  background-color: #6c6c6c;
+}
+.side-bar .head i {
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  padding-right: 0.5rem;
+}
+
+.artist-btn{
+  margin-top: 0.7rem;
+}
+
+.artist-list{
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.artist-list .singer {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  cursor: pointer;
+  height: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.artist-list .singer:hover {
+  background-color: #2c2c2c;
+}
+
+.artist-list .singer img{
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+}
+.artist-info{
+  margin-left: 0.5rem;
+}
+.artist-info span{
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
 .main{
-    height: 100vh;
-    background-color: #fff;
-    position: relative;
-    color: #121212; /* Set text color to dark for visibility */
+  flex: 1;
+  background-color: #fff;
+  position: relative;
+  color: #121212;
+  height: 100%;
 }
 
 .footer{
-    width: 100%;
-    height: 3.2rem;
-    position: sticky;
-    bottom: 0px;
-    background-color: blanchedalmond;
+  width: 100%;
+  height: 4rem;
+  position: sticky;
+  bottom: 0px;
+  background-color: blanchedalmond;
 }
+
+
+
+
+
+
