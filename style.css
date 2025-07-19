@@ -1,25 +1,31 @@
-
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-  color: #fff;
-  /* Removed global overflow: hidden; to allow local overflow settings */
-}
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Montserrat", sans-serif;
+      color: #fff;
+    }
 
-body {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
 
-.content-area {
+    .content-area {
+      flex: 1;
+      display: flex;
+      min-height: 0;
+    }
+
+.main_container {
   flex: 1;
-  display: flex;
-  min-height: 0;
+  margin: 0;
+  background-color: #121212;
+  overflow-y: auto;
+  padding: 1.5rem;
 }
-
 .header-section {
   height: 5rem;
   display: flex;
@@ -137,6 +143,7 @@ body {
   width: 25vw;
   background-color: #1d1d1d;
   height: 100%;
+  flex-wrap: wrap;
 }
 .library{
   height: 17%;
@@ -217,14 +224,76 @@ body {
   font-size: 0.8rem;
   opacity: 0.8;
 }
-.main{
-  flex: 1;
-  background-color: #a32525;
-  position: relative;
-  color: #121212;
-  height: 100%;
+.content-area {
+  display: flex;
+  height: calc(100vh - 5rem - 5.5rem); 
+  overflow-y: auto;
+}
+.all_music_podcast{
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.btn-section{
+  height: 2rem;
+  width: 5rem;
+  background-color: #1d1d1d;
+  color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  margin: 1rem;
+  margin-right: 0.5rem;
+  font-weight: 600;
+}
+.btn-section:hover{
+  background-color: #494747;
+  transform: scale(1.1);
+}
+.btn-section:focus{
+  background-color: #fff;
+  color: #1d1d1d;
+  transform: scale(0.9);
+}
+.card-list{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 3rem;
+}
+.card-list-2{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.made{
+  font-size: 1rem;
+  color: #848282;
+  width: 10rem;
+}
+.card-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 13rem;
+  height: 13rem;
+  margin-top: 0.5rem;
 }
 
+.card-item span{
+  font-size: 0.8rem;
+  color: #fff;
+  width: 10rem;
+}
+.card-item img {
+  height: 12rem;
+  width: 12rem;
+  padding: 1rem;
+  cursor: pointer;
+}
 .footer{
   width: 100%;
   height: 5.5rem;
@@ -254,8 +323,6 @@ body {
   transform: scale(1.1);
   color: #fff;
 }
-
-
 .footer .left .charlie img{
   height: 3rem;
   width: 3rem;
@@ -273,7 +340,6 @@ body {
   color: #fff;
   opacity: 1;
 }
-
 
 .footer .center {
   width: 40%;
@@ -305,7 +371,7 @@ body {
 
 .footer .center .controls .active{
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 2rem;
   opacity: 1;
 }
 .footer .center .progress-bar{
@@ -317,7 +383,7 @@ body {
 }
 .footer .center .progress-bar .progress-slider{
   height: 0.4rem;
-  width: 20rem;
+  width: 32rem;
   background-color: #494747;
   border-radius: 0.2rem;
   cursor: pointer;
@@ -341,8 +407,3 @@ body {
   opacity: 1;
   transform: scale(1.1);
 }
-
-
-
-
-
